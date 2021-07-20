@@ -86,7 +86,7 @@ h6{
 }
 
 a{
-  display:inline-block
+  display:inline-block;
 }
 
 a:active,a:focus,a:hover{
@@ -753,7 +753,7 @@ a.primary-btn:hover{
 }
 
 .active-link {
-font-weight: bold;
+  font-weight: bold;
 }
 
 /*
