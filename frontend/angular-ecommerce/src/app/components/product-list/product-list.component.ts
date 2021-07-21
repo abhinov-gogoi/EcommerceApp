@@ -12,8 +12,14 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
   currentCategoryId: number = 1;
+  previousCategoryId: number = 1;
   currentCategoryName: string = 'Products';
   searchMode: boolean = false;
+
+  // new properties for pagination
+  thePageNumber: number = 1;
+  thePageSize: number = 10;
+  theTotalElements: number = 0;
 
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
@@ -30,7 +36,6 @@ export class ProductListComponent implements OnInit {
     } else {
       this.handleListProducts();
     }
-
   }
 
   handleSearchProducts() {
@@ -48,7 +53,7 @@ export class ProductListComponent implements OnInit {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if(hasCategoryId) {
-      // get the 'id' param and convert it into number using + symbol
+      // get the 'id' param string. convert string into number using + symbol
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
       // get the 'name' param string
       this.currentCategoryName = this.route.snapshot.paramMap.get('name')!;
@@ -58,12 +63,31 @@ export class ProductListComponent implements OnInit {
       this.currentCategoryName = "Books";
     }
 
+    //
+    // Check if we have a different category than the previous
+    // Note : Angular will reuse a component if its currently being viewed
+    // So, pageNumber may not be updated here (reset to 1) while switching betn diff categories
+    //
+
+    if(this.previousCategoryId != this.currentCategoryId) {
+      this.thePageNumber = 1;
+    }
+    this.previousCategoryId = this.currentCategoryId;
+    // console.log(`currentCategoryId=${this.currentCategoryId} | pageNumber= ${this.thePageNumber}`)
+
     // get the products for this category id
-    this.productService.getProductList(this.currentCategoryId).subscribe(
-      data => {
-        this.products = data;
-      }
-    )
+    this.productService.getProductListPaginate(this.thePageNumber-1, this.thePageSize, this.currentCategoryId).subscribe(this.processResult())
+  }
+
+  processResult() {
+    return data => {
+      this.products = data._embedded.products;
+      this.thePageSize = data.page.size;
+      this.thePageNumber = data.page.number+1;
+      this.theTotalElements = data.page.totalElements;
+      // console.log(`pageSize=${this.thePageSize} | pageNumber=${this.thePageNumber} | totalElements=${this.theTotalElements}`)
+    }
+
   }
 
 }
