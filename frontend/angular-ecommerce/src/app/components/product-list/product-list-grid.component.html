@@ -7,7 +7,7 @@
         <div *ngFor="let product of products" class="col-md-3">
           <div class="product-box">
             <a routerLink="/products/{{product.id}}">
-              <img src="{{product.imageUrl}}" height="120" width="120"/>
+              <img src="{{product.imageUrl}}"/>
             </a>
             <a routerLink="/products/{{product.id}}">
               <h2>{{product.name}}</h2>
@@ -25,19 +25,30 @@
       <!-- Begin footer -->
       <div class="footer-pagination">
         <div class="row">
-          <div class="col-md-6"></div>
-
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="row">
-              <div class="col-md-9" style="padding-left: 30%;">
+              <div class="col-md-6" style="padding-left: 0%;">
 
-                <ngb-pagination [(page)]="thePageNumber"
+                <ngb-pagination
+                                [(page)]="thePageNumber"
                                 [pageSize]="thePageSize"
                                 [collectionSize]="theTotalElements"
+                                [maxSize] = "5"
+                                [boundaryLinks] = "true"
                                 (pageChange)="listProducts()">
 
                 </ngb-pagination>
 
+              </div>
+
+              <div class="col-md-3 mt-2" style="text-align: right;">
+                <span class="mr-2 green-text">Page Size </span>
+                <select #myPageSize (change)="updatePageSize(myPageSize.value)" class="green-text">
+                  <option value="2">2</option>
+                  <option selected="true" value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                </select>
               </div>
             </div>
           </div>

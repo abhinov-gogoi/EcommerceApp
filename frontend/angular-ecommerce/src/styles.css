@@ -735,6 +735,28 @@ table.table.table-bordered th{
   text-decoration: none;
 }
 
+ngb-pagination .page-item .page-link {
+  color: #181818;
+  border-color: #ebebeb;
+  background-color: #fdfdfd;
+}
+
+ngb-pagination .page-item.active .page-link {
+  color: rgb(247, 247, 247);
+  border-color: #b1fda2;
+  background-color: #42aa2d;
+}
+
+ngb-pagination .page-item.active .page-link:focus, .page-link:not(:disabled):not(.disabled):active:focus {
+  color: #1d1d1d;
+  box-shadow: 0 0 0 0.1rem dimgrey;
+}
+
+ngb-pagination .page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem dimgrey;
+}
+
+
 /**/
 
 /*
