@@ -1,0 +1,50 @@
+body {
+  background-color: #eee
+}
+
+.product {
+  padding: 10px;
+  background-color: #fff;
+  position: relative
+}
+
+.about h4 {
+  margin-bottom: -3px
+}
+
+.about h3 {
+  color: #42aa2d
+}
+
+.about span {
+  font-size: 13px
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #42aa2d;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  right: 10%;
+  z-index: 10;
+  bottom: 5%
+}
+
+.inner-dot {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer
+}

@@ -7,8 +7,8 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list-grid.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './product-list-template.component.html',
+  styleUrls: ['./product-list-template.component.css']
 })
 export class ProductListComponent implements OnInit {
 
@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
 
   // new properties for pagination
   thePageNumber: number = 1;
-  thePageSize: number = 5;
+  thePageSize: number = 6;
   theTotalElements: number = 0;
 
   previousKeyword: string = "";

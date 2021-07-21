@@ -750,6 +750,7 @@ ngb-pagination .page-item .page-link {
 }
 
 ngb-pagination .page-item.active .page-link {
+  z-index: -1;
   color: rgb(247, 247, 247);
   border-color: #b1fda2;
   background-color: #42aa2d;
@@ -1014,10 +1015,10 @@ footer ul li{
       margin-left:15px
   }
   .footer-pagination{
-      text-align:center
+      text-align:right;
   }
   .product-box{
-      text-align:centerg
+      text-align:center;
   }
   .page-container{
       position:relative;
