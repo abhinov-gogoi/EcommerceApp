@@ -12,6 +12,11 @@
             <div class="btn btn-dark">Add to Cart</div>
           </div>
         </div>
+        <!-- if no products found display a message -->
+        <div *ngIf="products==null || products==undefined || products.length==0" class="alert alert-warning col-md-12" role="alert">
+          <!-- or use safe navigation operator -->
+          <p style="text-align: center"><br>No Product Found</p>
+        </div>
       </div>
     </div>
   </div>
