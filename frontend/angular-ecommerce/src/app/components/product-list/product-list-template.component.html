@@ -48,11 +48,11 @@
               </a>
               <div class="about text-left px-3">
                   <a routerLink="/products/{{product.id}}" class="green-text">
-                    <h4>{{product.name}}</h4>
+                    <h4>{{product.name}}</h4><br>
                   </a>
-                  <div class="text-muted">SKU: {{product.sku}}</div>
+                  <!-- <p class="text-muted">SKU: {{product.sku}}</p> -->
 
-                  <h3>{{product.unitPrice | currency: 'USD'}}</h3>
+                  <h3>{{product.unitPrice | currency: 'INR'}}</h3>
               </div> <span  (click)="addToCart(product)" class="dot"><span class="inner-dot"><i class="fa fa-cart-plus"></i></span></span>
           </div>
       </div>

@@ -126,7 +126,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
   background:0 0;
   z-index:99999999;
   height:75px;
-  box-shadow:-2px 0 4px #0000003b
+  box-shadow:-2px 0 4px #0000003b;
 }
 
 /*
@@ -252,11 +252,11 @@ input.au-input.au-input-xl{
 }
 
 .total{
-  background:#42aa2d;
+  background:#a3ca63;
   line-height:43px;
   color:#fff;
   border-radius:30px;
-  border:1px solid #42aa2d;
+  border:1px solid #a3ca63;
   float:left;
   margin-top:7px;
   padding-left:17px
@@ -285,11 +285,11 @@ input.au-input.au-input-xl{
   right:0;
   min-width:95px;
   color:#fff;
-  border:1px solid #42aa2d;
+  border:1px solid #a3ca63;
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:43px;
-  background:#42aa2d
+  background:#a3ca63
 }
 
 .au-btn-submit:hover{
@@ -381,7 +381,7 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a:hover{
-  color:#42aa2d
+  color:#a3ca63
 }
 
 /*
@@ -484,7 +484,7 @@ input.au-input.au-input-xl{
   line-height:inherit
 }
 .header-mobile .navbar-mobile .navbar-mobile-list li a:hover{
-  color:#42aa2d
+  color:#a3ca63
 }
 .header-mobile .navbar-mobile .navbar-mobile-list li a>i{
   margin-right:19px
@@ -545,7 +545,7 @@ input.au-input.au-input-xl{
 .price{
   margin:15px 0 0;
   font-weight:800;
-  color:#42aa2d
+  color:#a3ca63
 }
 .product-box h1{
   font-size:18px;
@@ -658,7 +658,7 @@ label.date{
   top:-1px;
   width:9px;
   height:15px;
-  border:solid #42aa2d;
+  border:solid #a3ca63;
   border-width:0 4px 4px 0;
   -webkit-border-radius:2px;
   -moz-border-radius:2px;
@@ -693,7 +693,7 @@ table.table.table-bordered{
   border:1px solid #dee2e6
 }
 table.table.table-bordered th{
-  BACKGROUND:#42aa2d;
+  BACKGROUND:#a3ca63;
   color:#fff;
   font-size:14px;
   padding:7px
@@ -720,7 +720,7 @@ table.table.table-bordered th{
 .price{
   margin:15px 0 0;
   font-weight:800;
-  color:#42aa2d
+  color:#a3ca63
 }
 .detail-section{
   margin-top:60px
@@ -731,14 +731,14 @@ table.table.table-bordered th{
 }
 
 .green-text {
-  color: #42aa2d;
+  color: #a3ca63;
   font-weight: bold;
   text-decoration: none;
 }
 
 .primary-icon {
   background-color: #000;
-  color: #42aa2d;
+  color: #a3ca63;
   font-weight: bold;
   text-decoration: none;
 }
@@ -753,7 +753,7 @@ ngb-pagination .page-item.active .page-link {
   z-index: -1;
   color: rgb(247, 247, 247);
   border-color: #b1fda2;
-  background-color: #42aa2d;
+  background-color: #a3ca63;
 }
 
 ngb-pagination .page-item.active .page-link:focus, .page-link:not(:disabled):not(.disabled):active:focus {
@@ -776,8 +776,8 @@ ngb-pagination .page-link:not(:disabled):not(.disabled):active:focus {
 
 .btn-info{
   color:#fff;
-  background-color:#42aa2d!important;
-  border-color:#42aa2d!important
+  background-color:#a3ca63!important;
+  border-color:#a3ca63!important
 }
 a.primary-btn{
   background:#05143f;
@@ -790,7 +790,7 @@ a.primary-btn{
   margin-top:5px
 }
 a.primary-btn:hover{
-  background:#42aa2d;
+  background:#a3ca63;
   color:#fff
 }
 
@@ -960,7 +960,7 @@ footer ul li{
       font-size:22px;
       float:left;
       margin-top:16px;
-      color:#42aa2d;
+      color:#a3ca63;
       margin-left:15px
   }
       .header-wrap2{
@@ -1011,7 +1011,7 @@ footer ul li{
       font-size:22px;
       float:left;
       margin-top:16px;
-      color:#42aa2d;
+      color:#a3ca63;
       margin-left:15px
   }
   .footer-pagination{
@@ -1030,11 +1030,11 @@ footer ul li{
       right:10px;
       min-width:85px;
       color:#fff;
-      border:1px solid #42aa2d;
+      border:1px solid #a3ca63;
       -webkit-border-radius:3px;
       -moz-border-radius:3px;
       border-radius:0;
-      background:#42aa2d
+      background:#a3ca63
   }
   input.au-input.au-input-xl{
       border-radius:0!important;
@@ -1050,7 +1050,7 @@ footer ul li{
       font-size:18px;
       float:left;
       margin-top:16px;
-      color:#42aa2d;
+      color:#a3ca63;
       margin-left:15px
   }
   .total span{
@@ -1063,11 +1063,11 @@ footer ul li{
       margin-left:6px
   }
   .total{
-      background:#42aa2d;
+      background:#a3ca63;
       line-height:30px;
       color:#fff;
       border-radius:30px;
-      border:1px solid #42aa2d;
+      border:1px solid #a3ca63;
       float:left;
       margin-top:9px;
       padding-left:12px

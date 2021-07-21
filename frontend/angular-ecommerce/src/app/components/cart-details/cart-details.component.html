@@ -21,7 +21,7 @@
                 <a routerLink="/products/{{cartItem.id}}" style="text-decoration:none">
                   <p class="green-text">{{cartItem.name}}</p>
                 </a>
-                <p>{{cartItem.unitPrice | currency: 'USD'}}</p>
+                <p>{{cartItem.unitPrice | currency: 'INR'}}</p>
               </td>
               <td>
                 <div class="items">
@@ -48,7 +48,7 @@
                     <div class="col-8"></div>
                   </div>
                 </div>
-                <p class="mt-2">Sub Total: {{cartItem.quantity*cartItem.unitPrice | currency: 'USD'}}</p>
+                <p class="mt-2">Sub Total: {{cartItem.quantity*cartItem.unitPrice | currency: 'INR'}}</p>
               </td>
             </tr>
             <tr>
@@ -56,7 +56,7 @@
               <td style="font-weight:bold;">
                 <p>Total Quantity: {{totalQuantity}}</p>
                 <p>Shipping: Free</p>
-                <h3 class="green-text">Total Price: {{totalPrice | currency: 'USD'}}</h3>
+                <h3 class="green-text">Total Price: {{totalPrice | currency: 'INR'}}</h3>
               </td>
             </tr>
           </tbody>
