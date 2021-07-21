@@ -293,7 +293,8 @@ input.au-input.au-input-xl{
 }
 
 .au-btn-submit:hover{
-  background:#05143f
+  color:rgb(39, 39, 39);
+  background:rgb(255, 255, 255)
 }
 
 .au-btn-submit>i{
@@ -730,6 +731,13 @@ table.table.table-bordered th{
 }
 
 .green-text {
+  color: #42aa2d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.primary-icon {
+  background-color: #000;
   color: #42aa2d;
   font-weight: bold;
   text-decoration: none;
