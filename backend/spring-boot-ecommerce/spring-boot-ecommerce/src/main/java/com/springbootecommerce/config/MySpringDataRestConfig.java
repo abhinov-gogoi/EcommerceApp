@@ -1,7 +1,9 @@
 package com.springbootecommerce.config;
 
+import com.springbootecommerce.entity.Country;
 import com.springbootecommerce.entity.Product;
 import com.springbootecommerce.entity.ProductCategory;
+import com.springbootecommerce.entity.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -29,25 +31,26 @@ public class MySpringDataRestConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         HttpMethod[] unsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 
-        // Disable http methods PUT, POST, DELETE for product repository in v1.0
-        config.getExposureConfiguration()
-                .forDomainType(Product.class)
-                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(unsupportedActions)))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(unsupportedActions));
-
-        // Disable http methods PUT, POST, DELETE for product Category repository in v1.0
-        config.getExposureConfiguration()
-                .forDomainType(ProductCategory.class)
-                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(unsupportedActions)))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(unsupportedActions));
+        // Disable http methods PUT, POST, DELETE for the Repository Classes in v1.0
+        disableHttpMethods(Product.class, config, unsupportedActions);
+        disableHttpMethods(ProductCategory.class, config, unsupportedActions);
+        disableHttpMethods(Country.class, config, unsupportedActions);
+        disableHttpMethods(State.class, config, unsupportedActions);
 
         // call an internal helper method
         exposeIds(config);
     }
 
+    private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] unsupportedActions) {
+        config.getExposureConfiguration()
+                .forDomainType(theClass)
+                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(unsupportedActions)))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(unsupportedActions));
+    }
+
 
     private void exposeIds(RepositoryRestConfiguration config) {
-        // Expose entity ids in Spring Data Rest
+        // Expose entity ids in Spring Data Rest _embedded
 
         // -get a list of all entity classes from the entity manager
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();

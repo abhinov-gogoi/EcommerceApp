@@ -77,7 +77,7 @@ export class CartService {
       totalQuantityValue += currentCartItem.quantity;
     }
 
-    // publish these new values ... all subscribes will receive this new data
+    // publish these new values ... all subscribes will receive this new data ASAP
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
 
