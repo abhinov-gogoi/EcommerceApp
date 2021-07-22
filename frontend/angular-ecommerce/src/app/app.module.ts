@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CartService } from './services/cart.service';
 
 const routes: Route[] = [
   {path: 'cart-details', component: CartDetailsComponent},
@@ -44,7 +45,7 @@ const routes: Route[] = [
     HttpClientModule,
     NgbModule
   ],
-  providers: [ ProductService ],
+  providers: [ ProductService, CartService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
