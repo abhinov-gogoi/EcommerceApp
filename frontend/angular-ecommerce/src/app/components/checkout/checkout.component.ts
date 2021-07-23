@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Country } from 'src/app/common/Country';
+import { State } from 'src/app/common/State';
 import { EcommerceFormService } from 'src/app/services/ecommerce-form.service';
 
 @Component({
@@ -15,6 +17,11 @@ export class CheckoutComponent implements OnInit {
 
   creditCardMonths: number[] = [];
   creditCardYears: number[] = [];
+
+  countries: Country[] = [];
+  shippingAddressStates: State[] = [];
+  billingAddressStates: State[] = [];
+  sameAddress: Boolean = true;
 
   constructor(private formBuilder: FormBuilder, private ecommerceFormService: EcommerceFormService) { }
 
@@ -59,18 +66,31 @@ export class CheckoutComponent implements OnInit {
     this.ecommerceFormService.getCreditCardYears().subscribe(
       data => this.creditCardYears = data
     )
+
+    // populate countries
+    this.ecommerceFormService.getCountries().subscribe(
+      data => this.countries = data
+    );
   }
 
   onSubmit() {
+    if(this.sameAddress){
+      this.checkoutFormGroup.controls.billingAddress.setValue(this.checkoutFormGroup.controls.shippingAddress.value)
+    }
     console.log("clicked SUBMIT")
-    console.log(this.checkoutFormGroup.get("customer").value)
+    console.log(this.checkoutFormGroup.value)
   }
 
-  copyShippingAddressToBillingAddress(event) {
+ copyShippingAddressToBillingAddress(event) {
     if(event.target.checked) {
+      this.sameAddress = true;
       this.checkoutFormGroup.controls.billingAddress.setValue(this.checkoutFormGroup.controls.shippingAddress.value)
+      //bugfix code
+      this.billingAddressStates = this.shippingAddressStates;
     } else {
+      this.sameAddress = false;
       this.checkoutFormGroup.controls.billingAddress.reset();
+      this.billingAddressStates = [];
     }
   }
 
@@ -92,5 +112,26 @@ export class CheckoutComponent implements OnInit {
     this.ecommerceFormService.getCreditCardMonths(startMonth).subscribe(
       data => this.creditCardMonths = data
     )
+  }
+
+  getStates(addressType: string) {
+    const formGroup = this.checkoutFormGroup.get(addressType);
+    const countryCode = formGroup.value.country.code;
+    const countryName = formGroup.value.country.name;
+
+    console.log(`addressType Selected = ${addressType}`)
+
+    // call ecommerce form service to get states based on country code
+    this.ecommerceFormService.getStates(countryCode).subscribe(
+        data => {
+          // console.log(JSON.stringify(data))
+          if(addressType === "shippingAddress") {
+            this.shippingAddressStates = data
+          } else if(addressType === "billingAddress") {
+            this.billingAddressStates = data
+          }
+        }
+    );
+
   }
 }

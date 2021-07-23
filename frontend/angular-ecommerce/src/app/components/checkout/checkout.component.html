@@ -40,9 +40,8 @@
             <div class="col-md-2"><label>Country</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
-                  <option>TODO 1</option>
-                  <option>TODO 2</option>
+                <select formControlName="country" (change)="getStates('shippingAddress')">
+                  <option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
                 </select>
               </div>
             </div>
@@ -67,9 +66,8 @@
             <div class="col-md-2"><label>State</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
-                  <option>TODO 1</option>
-                  <option>TODO 2</option>
+                <select formControlName="state">
+                  <option *ngFor="let state of shippingAddressStates">{{state.name}}</option>
                 </select>
               </div>
             </div>
@@ -86,20 +84,19 @@
         <!-- checkbox to copy shipping address to billing address -->
         <div class="input-space">
           <label class="checkbox">
-            <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
+            <input type="checkbox" checked (change)="copyShippingAddressToBillingAddress($event)">
             <span class="green-text"> Billing Address same as Shipping address</span>
           </label>
         </div>
         <!-- billing address -->
-        <div formGroupName="billingAddress" class="form-area">
+        <div formGroupName="billingAddress" class="form-area" *ngIf="!sameAddress">
           <h3>Billing Address</h3>
           <div class="row">
             <div class="col-md-2"><label>Country</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
-                  <option>TODO 1</option>
-                  <option>TODO 2</option>
+                <select formControlName="country" (change)="getStates('billingAddress')">
+                  <option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
                 </select>
               </div>
             </div>
@@ -124,9 +121,8 @@
             <div class="col-md-2"><label>State</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
-                  <option>TODO 1</option>
-                  <option>TODO 2</option>
+                <select formControlName="state">
+                  <option *ngFor="let state of billingAddressStates">{{state.name}}</option>
                 </select>
               </div>
             </div>
