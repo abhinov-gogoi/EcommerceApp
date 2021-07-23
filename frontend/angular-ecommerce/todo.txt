@@ -1,0 +1,4 @@
+1. disaplay - toast, warnings in Add to card, remove from cart, confirm
+2. checksum for credit card validation (Mastercard or VISA) based card number
+3. select dafault value of card in checkout.component.html
+

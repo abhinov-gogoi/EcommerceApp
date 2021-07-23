@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { CartItem } from '../common/cart-item';
 
 @Injectable({
@@ -10,8 +10,8 @@ export class CartService {
   cartItems: CartItem[] = [];
 
   // subjects are subscribe-able. These values get automatically updated to all subscribers
-  totalPrice: Subject<number> = new Subject<number>();
-  totalQuantity: Subject<number> = new Subject<number>();
+  totalPrice: Subject<number> = new BehaviorSubject<number>(0);
+  totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
   constructor() { }
 
