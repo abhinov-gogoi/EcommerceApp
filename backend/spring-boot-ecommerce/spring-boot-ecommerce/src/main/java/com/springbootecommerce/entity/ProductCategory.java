@@ -2,14 +2,13 @@ package com.springbootecommerce.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "product_category")
-//@Data - known bug of lombok when used with oneToMany or manyToOne
+@Table(name="product_category")
+// @Data -- known bug
 @Getter
 @Setter
 public class ProductCategory {
@@ -24,4 +23,12 @@ public class ProductCategory {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private Set<Product> products;
+
 }
+
+
+
+
+
+
+
