@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/Product';
 import { CartService } from 'src/app/services/cart.service';
@@ -26,13 +26,23 @@ export class ProductListComponent implements OnInit {
   previousKeyword: string = "";
 
 
-  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
       this.listProducts();
     });
+
+    // this.reloadComponent();
   }
+
+  // reloadComponent() {
+  //   let currentUrl = this.route.url;
+  //       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  //       this.router.onSameUrlNavigation = 'reload';
+  //       this.router.navigate([currentUrl]);
+  //   }
 
   listProducts() {
     this.searchMode = this.route.snapshot.paramMap.has("keyword") ? true : false;

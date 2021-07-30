@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
   constructor(private oktaAuthService: OktaAuthService) {
     this.oktaSignIn = new OktaSignIn({
       logo: 'assets/images/logo/shopify.png',
+      features: {
+        registration: true
+      },
       baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0],
       clientId: myAppConfig.oidc.clientId,
       redirectUri: myAppConfig.oidc.redirectUri,
@@ -34,7 +37,7 @@ export class LoginComponent implements OnInit {
 
       (response) => {
         if(response.status === 'SUCCESS') {
-          this.oktaAuthService.signInWithRedirect();
+          this.oktaAuthService.signInWithRedirect()
         }
       },
       (error) => {
