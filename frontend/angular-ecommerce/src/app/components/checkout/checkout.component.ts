@@ -30,6 +30,8 @@ export class CheckoutComponent implements OnInit {
   billingAddressStates: State[] = [];
   sameAddress: Boolean = true;
 
+  storage: Storage = sessionStorage;
+
   emailRegex = '^[a-z0-9._%+-]+@[a-z0-9._]+\\.[a-z]{2,4}$'
 
   constructor(private formBuilder: FormBuilder,
@@ -39,6 +41,8 @@ export class CheckoutComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+    // read the users email from browser storage
+    const theEmail = JSON.parse(this.storage.getItem("userEmail"));
 
     this.reviewCartDetails();
 
@@ -46,7 +50,7 @@ export class CheckoutComponent implements OnInit {
       customer: this.formBuilder.group({
         firstName: new FormControl('', [Validators.required, Validators.minLength(2), EcommerceValidators.notOnlyWhitespace]),
         lastName:  new FormControl('', [Validators.required, Validators.minLength(2), EcommerceValidators.notOnlyWhitespace]),
-        email: new FormControl('', [Validators.required, Validators.pattern(this.emailRegex)])
+        email: new FormControl(theEmail, [Validators.required, Validators.pattern(this.emailRegex)])
       }),
       shippingAddress: this.formBuilder.group({
         street: new FormControl('', [Validators.required, Validators.minLength(2), EcommerceValidators.notOnlyWhitespace]),

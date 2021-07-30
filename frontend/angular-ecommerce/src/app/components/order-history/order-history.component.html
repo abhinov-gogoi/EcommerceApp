@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <h3>Your Orders, {{theEmail}}</h3>
+      <div *ngIf="orderHistoryList.length > 0">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="30%">OrderTracking Number</th>
+              <th width="10%">Total Price</th>
+              <th width="10%">Total Quantity</th>
+              <th width="20%">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orderHistory of orderHistoryList">
+              <td>{{orderHistory.orderTrackingNumber}}</td>
+              <td>{{orderHistory.totalPrice | currency:'INR' }}</td>
+              <td>{{orderHistory.totalQuantity}}</td>
+              <td>{{orderHistory.dateCreated | date: 'medium'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- if orderHistoryList is empty then display a message -->
+      <div *ngIf="orderHistoryList.length <= 0" class="alert alert-warning col-md-12">
+        You have not placed any Orders
+      </div>
+    </div>
+  </div>
+</div>
