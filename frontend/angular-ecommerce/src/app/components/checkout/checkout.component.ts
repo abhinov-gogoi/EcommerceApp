@@ -105,6 +105,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
+
     if(this.sameAddress){
       this.checkoutFormGroup.controls.billingAddress.setValue(this.checkoutFormGroup.controls.shippingAddress.value)
     }
@@ -165,8 +166,7 @@ export class CheckoutComponent implements OnInit {
         }
       }
     );
-
-
+    console.log("PURCHASE CLICKED: "+purchase)
   }
 
   resetCart() {

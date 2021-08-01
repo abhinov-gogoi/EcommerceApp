@@ -3,3 +3,7 @@
 3. select dafault value of card in checkout.component.html
 4. Reload component after user login
 
+
+
+// bugfixes
+1. Checkout page - cant checkout while form values are autofiled by chrome, need to change country and state values manually once then only click purchase button
