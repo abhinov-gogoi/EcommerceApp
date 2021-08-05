@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
 
   // new properties for pagination
   thePageNumber: number = 1;
-  thePageSize: number = 6;
+  thePageSize: number = 8;
   theTotalElements: number = 0;
 
   previousKeyword: string = "";
@@ -66,6 +66,7 @@ export class ProductComponent implements OnInit {
   handleListProducts() {
     // check if 'id' param is available
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+    console.log("hasCategoryId " + hasCategoryId)
 
     if(hasCategoryId) {
       // get the 'id' param string. convert string into number using + symbol

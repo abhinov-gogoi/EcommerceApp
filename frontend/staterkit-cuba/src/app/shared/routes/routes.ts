@@ -21,5 +21,9 @@ export const content: Routes = [
   {
     path: 'products/:id',
     loadChildren: () => import('../../components/product-details/product-details.module').then(m => m.ProductDetailsModule)
+  },
+  {
+    path: 'category/:id/:name',
+    loadChildren: () => import('../../components/product/product.module').then(m => m.ProductModule)
   }
 ];

@@ -20,7 +20,7 @@ export class ProductCategoryMenuComponent implements OnInit {
   }
 
   listProductCategories() {
-    console.log("called from menu component")
+    // console.log("called from menu component")
     this.productService.getProductCategories().subscribe(
       data => {
         // console.log("Product categories"+ JSON.stringify(data));
@@ -30,8 +30,8 @@ export class ProductCategoryMenuComponent implements OnInit {
   }
 
   onClick(productCategory: any) {
-    console.log("CLICK called from menu component")
-    console.log(productCategory)
+    // console.log("CLICK called from menu component")
+    // console.log(productCategory)
     this.router.navigateByUrl(`/category/${productCategory.id}/${productCategory.categoryName}`)
   }
 
