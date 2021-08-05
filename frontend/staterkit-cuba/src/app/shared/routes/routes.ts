@@ -13,5 +13,9 @@ export const content: Routes = [
   {
     path: 'product-list',
     loadChildren: () => import('../../components/product-list/product-list.module').then(m => m.ProductListModule)
+  },
+  {
+    path: 'product',
+    loadChildren: () => import('../../components/product/product.module').then(m => m.ProductModule)
   }
 ];

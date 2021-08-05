@@ -85,15 +85,16 @@ export class NavService implements OnDestroy {
 		{
 			headTitle1: 'Shop', headTitle2: 'Ecommerce App',
 		},
-		{
-			title: 'Categories', icon: 'home', type: 'sub', badgeType: 'success', badgeValue: '2', active: true, children: [
-				{ path: '/sample-page', title: 'Sample 1', type: 'link' },
-				{ path: 'javascript:void(0);', title: 'Sample 2', type: 'extLink' }
-			]
-		},
+		// {
+		// 	title: 'Categories', icon: 'home', type: 'sub', badgeType: 'success', badgeValue: '2', active: true, children: [
+		// 		{ path: '/sample-page', title: 'Sample 1', type: 'link' },
+		// 		{ path: 'javascript:void(0);', title: 'Sample 2', type: 'extLink' }
+		// 	]
+		// },
     {
 			title: 'Products', icon: 'home', type: 'sub', badgeType: 'success', badgeValue: '0', active: true, children: [
-				{ path: '/product-list', title: 'All Products', type: 'link' }
+				// { path: '/product-list', title: 'All Products', type: 'link' },
+        { path: '/product', title: 'All Products', type: 'link' },
 			]
 		},
 	];
