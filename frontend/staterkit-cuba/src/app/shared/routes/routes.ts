@@ -9,5 +9,9 @@ export const content: Routes = [
   {
     path: 'shop-page',
     loadChildren: () => import('../../components/shop-page/shop-page.module').then(m => m.ShopPageModule)
+  },
+  {
+    path: 'product-list',
+    loadChildren: () => import('../../components/product-list/product-list.module').then(m => m.ProductListModule)
   }
 ];

@@ -1,0 +1,67 @@
+
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center g-1">
+
+       <!-- Begin Pagination -->
+       <div class="footer-pagination" style="position:sticky; padding-top: 40px; padding-bottom: 0px;">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-7 mt-6" style="text-align: left;">
+                <h2>{{currentCategoryName}}</h2>
+              </div>
+
+              <div class="col-md-3" style="padding-left: 0%; text-align: right;">
+
+                <ngb-pagination
+                                [(page)]="thePageNumber"
+                                [pageSize]="thePageSize"
+                                [collectionSize]="theTotalElements"
+                                [maxSize] = "5"
+                                [boundaryLinks] = "true"
+                                (pageChange)="listProducts()">
+
+                </ngb-pagination>
+
+              </div>
+
+              <div class="col-md-2 mt-2" style="text-align: right;">
+                <span class="mr-2 green-text">Page Size </span>
+                <select #myPageSize (change)="updatePageSize(myPageSize.value)" class="green-text">
+                  <option value="3">3</option>
+                  <option selected="true" value="6">6</option>
+                  <option value="12">12</option>
+                  <option value="24">24</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Pagination -->
+      <br><br>
+
+      <div *ngFor="let product of products" class="col-md-4">
+          <div class="product text-center">
+              <a routerLink="/products/{{product.id}}">
+                <img src="{{product.imageUrl}}" width="250">
+              </a>
+              <div class="about text-left px-3">
+                  <a routerLink="/products/{{product.id}}" class="green-text">
+                    <h4>{{product.name}}</h4><br>
+                  </a>
+                  <!-- <p class="text-muted">SKU: {{product.sku}}</p> -->
+
+                  <h3>{{product.unitPrice | currency: 'INR'}}</h3>
+              </div> <span  (click)="addToCart(product)" class="dot"><span class="inner-dot"><i class="fa fa-cart-plus"></i></span></span>
+          </div>
+      </div>
+
+      <!-- if no products found display a message -->
+      <div *ngIf="products==null || products==undefined || products.length==0" class="alert alert-warning col-md-12" role="alert">
+        <!-- or use safe navigation operator -->
+        <p style="text-align: center"><br>No Product Found</p>
+      </div>
+  </div>
+</div>
+

@@ -38,6 +38,7 @@
     "@ngx-loading-bar/router": "^5.1.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "@okta/okta-angular": "^3.2.2",
     "@sweetalert2/ngx-sweetalert2": "^8.1.1",
     "@swimlane/ngx-charts": "^14.0.0",
     "@swimlane/ngx-datatable": "^17.0.0",

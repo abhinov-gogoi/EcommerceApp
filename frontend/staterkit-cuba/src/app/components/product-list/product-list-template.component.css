@@ -1,0 +1,58 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  background-color: #eee
+}
+
+.product {
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0px;
+}
+
+.about h4 {
+  font-family: 'Lato', sans-serif;
+  font-weight:600;
+  margin-bottom: -3px
+}
+
+.about h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight:bold;
+  color: #a3ca63
+}
+
+.about span {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #a3ca63;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  right: 65%;
+  z-index: 0;
+  bottom: 5%
+}
+
+.inner-dot {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer
+}
