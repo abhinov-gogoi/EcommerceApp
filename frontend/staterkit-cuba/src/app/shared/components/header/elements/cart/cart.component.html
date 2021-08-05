@@ -1,6 +1,6 @@
 <div class="cart-box" (click)="toggleCart()">
   <app-feather-icons [icon]="'shopping-cart'"></app-feather-icons>
-  <span class="badge badge-pill badge-primary">2</span>
+  <span class="badge badge-pill badge-primary">{{totalQuantity}}</span>
 </div>
 <ul class="cart-dropdown onhover-show-div" [class.active]="openCart">
   <li>
@@ -17,11 +17,11 @@
         <div class="qty-box">
           <div class="input-group">
             <span class="input-group-prepend">
-              <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button>
+              <button (click)="decrementQuantity(cartItem)" class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button>
             </span>
-            <input class="form-control input-number" type="text" name="quantity" value="1">
+            <input class="form-control input-number" type="text" name="quantity" value="{{cartItem.quantity}}">
             <span class="input-group-prepend">
-              <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button>
+              <button (click)="incrementQuantity(cartItem)" class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button>
             </span>
           </div>
         </div>

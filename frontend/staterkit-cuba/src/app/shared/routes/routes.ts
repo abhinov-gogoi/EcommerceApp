@@ -25,5 +25,9 @@ export const content: Routes = [
   {
     path: 'category/:id/:name',
     loadChildren: () => import('../../components/product/product.module').then(m => m.ProductModule)
+  },
+  {
+    path: 'search/:keyword',
+    loadChildren: () => import('../../components/product/product.module').then(m => m.ProductModule)
   }
 ];

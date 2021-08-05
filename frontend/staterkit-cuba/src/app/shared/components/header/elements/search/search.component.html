@@ -1,7 +1,7 @@
 <form class="form-inline search-full" [class.open]="navServices.search">
   <div class="form-group w-100">
-    <input class="form-control-plaintext" [(ngModel)]="text" [ngModelOptions]="{standalone: true}"
-           (keyup)="searchTerm(text)" type="text" autocomplete="off" placeholder="Search..">
+    <input #myInput class="form-control-plaintext" [(ngModel)]="text" [ngModelOptions]="{standalone: true}"
+           (keyup)="doSearch(myInput.value)" type="text" autocomplete="off" placeholder="Search..">
     <app-feather-icons [icon]="'x'" class="close-search" (click)="searchToggle()"></app-feather-icons>
     <div class="Typeahead-menu" [class.is-open]="searchResult" *ngIf="menuItems?.length" id="search-outer">
       <div class="ProfileCard u-cf" *ngFor="let menuItem of menuItems | slice:0:8">

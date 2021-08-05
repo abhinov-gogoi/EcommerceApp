@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavService, Menu } from '../../../../services/nav.service';
 
 @Component({
@@ -15,12 +16,20 @@ export class SearchComponent implements OnInit {
   public searchResultEmpty: boolean = false;
   public text: string;
 
-  constructor(public navServices: NavService) {
+  constructor(public navServices: NavService, private router: Router) {
     this.navServices.items.subscribe(menuItems => this.items = menuItems);
   }
 
   ngOnInit() {
   }
+
+
+  doSearch(value: string) {
+    console.log("Clicked Search: "+ value);
+    this.router.navigateByUrl(`/search/${value}`)
+  }
+
+  // CUBA CODE
 
   searchToggle() {
     this.navServices.search = false;
