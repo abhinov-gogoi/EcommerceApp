@@ -48,7 +48,7 @@ export class CartService {
     }
 
     // check if we found it
-    console.log(alreadyExistsInCart)
+    // console.log(alreadyExistsInCart)
 
     if(alreadyExistsInCart) {
       // increment the quantity of the existing cart item
