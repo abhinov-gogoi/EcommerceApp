@@ -148,27 +148,30 @@
         <div *ngFor="let product of products"  [class]="'col-xl-'+col+' col-sm-'+col" [class.col-xl-12]="listView">
           <div class="card">
             <div  class="product-box">
-              <div class="product-img"><img class="img-fluid" src="{{product.imageUrl}}" alt="">
-                <div class="product-hover">
+              <div class="product-img">
+                <a routerLink="/products/{{product.id}}">
+                  <img class="img-fluid" src="{{product.imageUrl}}" alt="">
+                </a>
+                <!-- <div class="product-hover">
                   <ul>
                     <li>
                       <button class="btn" type="button"><i class="icon-shopping-cart"></i></button>
                     </li>
                     <li>
-                      <!-- <button class="btn" type="button" (click)="QuickView.openModal()"><i class="icon-eye"></i></button> -->
+                      <button class="btn" type="button" (click)="QuickView.openModal()"><i class="icon-eye"></i></button>
                     </li>
                     <li>
                       <button class="btn" type="button"><i class="icofont icofont-law-alt-2"></i></button>
                     </li>
                   </ul>
-                </div>
+                </div> -->
               </div>
               <div class="product-details">
                 <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                 <h4>{{product.name}}</h4>
                 <!-- <p>{{product.description}}</p> -->
                 <div class="product-price">{{product.unitPrice | currency: 'INR'}}
-                  <del>{{product.unitPrice+130/product.unitPrice+55 | currency: 'INR'}}    </del>
+                  <del>{{product.unitPrice+130/product.unitPrice+55 | currency: 'INR'}} </del>
                 </div>
               </div>
             </div>
