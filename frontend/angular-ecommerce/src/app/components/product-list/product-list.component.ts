@@ -33,16 +33,8 @@ export class ProductListComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.listProducts();
     });
-
-    // this.reloadComponent();
   }
 
-  // reloadComponent() {
-  //   let currentUrl = this.route.url;
-  //       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  //       this.router.onSameUrlNavigation = 'reload';
-  //       this.router.navigate([currentUrl]);
-  //   }
 
   listProducts() {
     this.searchMode = this.route.snapshot.paramMap.has("keyword") ? true : false;

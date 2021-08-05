@@ -1,0 +1,211 @@
+/**=====================
+    30. Data-table CSS Start
+==========================**/
+code{
+  &.option{
+    color: $danger-color !important;
+  }
+  &.api{
+    color: $success-color !important;
+  }
+}
+
+// Datatable extension
+.product-table{
+  th{
+    &:last-child{
+      min-width: 120px;
+    }
+  }
+  h6{
+    font-weight: 600;
+    color: $dark-color;
+  }
+}
+table{
+  &.dataTable{
+    &.display {
+      tbody {
+        tr{
+          &.odd {
+            > .sorting_1{
+              background-color: $light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ngx-datatable {
+    &.bootstrap {
+        .datatable-body {
+          .datatable-body-row[ng-reflect-is-selected="true"] {
+            &:hover {
+              background-color: darken($primary-color, 5%) !important;
+            }
+          }
+        }
+        .datatable-footer {
+            .datatable-pager {
+                .datatable-icon-left, .datatable-icon-skip, .datatable-icon-right, .datatable-icon-prev {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+.noscroll{
+  .datatable-footer{
+    .datatable-footer-inner{
+      height: auto !important;
+    }
+  }
+}
+.selection-datatable {
+  .table-responsive {
+    ng2-smart-table-pager {
+      margin-top: 0 !important;
+    }
+  }
+}
+.custom-datatable {
+  input {
+    padding:8px;
+    margin-bottom: 30px;
+    border: 1px solid $light-semi-gray;
+    width:30%;
+    color: $light-text;
+    &::placeholder {
+      color: $light-text;
+    }
+  }
+  .datatable-icon-right {
+    &:before {
+      content: "\f054";
+      font-family: $font-awesome !important;
+      font-size: 10px;
+    }
+  }
+  .datatable-icon-left {
+    &:before {
+      content: "\f053";
+      font-family: $font-awesome !important;
+      font-size: 10px;
+    }
+  }
+  .datatable-icon-prev {
+    &:before {
+      content: "\f100";
+      font-family: $font-awesome !important;
+      font-size: 14px;
+    }
+  }
+  .datatable-icon-skip {
+    &:before {
+      content: "\f101";
+      font-family: $font-awesome !important;
+      font-size: 14px;
+    }
+  }
+  .ngx-datatable {
+    .datatable-checkbox {
+      margin-bottom: 0;
+      input {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+    &.bootstrap {
+      .datatable-header {
+        border: 1px solid $light-semi-gray;
+        border-bottom: none;
+        .datatable-header-cell {
+          border-bottom: none;
+        }
+      }
+      .datatable-body  {
+        border: 1px solid $light-semi-gray;
+        border-top: none;
+        margin-bottom: 6px;
+        .datatable-selection {
+          .datatable-scroll {
+            .datatable-row-wrapper {
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+
+        .datatable-body-row {
+           input {
+             margin-bottom: 0;
+           }
+          &.active {
+            background-color: $primary-color;
+          }
+          &.datatable-row-even {
+            background-color: #f9f9f9;
+            &:hover {
+              background-color: $light;
+            }
+            &.active {
+              background-color: $primary-color;
+            }
+          }
+          &.datatable-row-odd {
+            &:hover {
+              background-color: $light;
+            }
+          }
+        }
+      }
+      .datatable-footer {
+        background: $white;
+        color: inherit;
+        .datatable-pager {
+          margin-right: 0;
+          ul {
+            li {
+              margin: 0;
+              &:not(.disabled).active {
+                a {
+                  background-color: $primary-color;
+                  color: $white;
+                }
+              }
+              &:not(.disabled):hover {
+                a {
+                  border: 1px solid $primary-color;
+                  background-color: $transparent-color;
+                  color: inherit;
+                }
+              }
+            }
+          }
+          a {
+            color: inherit;
+            height: 38px;
+            min-width: 38px;
+            line-height: 38px;
+          }
+        }
+      }
+    }
+    .datatable-body-row, .datatable-row-center, .datatable-header-inner {
+      display: -webkit-box !important;
+    }
+    .datatable-footer {
+      .datatable-pager {
+        .pager {
+          border: 1px solid $light-semi-gray;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+/**=====================
+     30. Data-table CSS Ends
+==========================**/

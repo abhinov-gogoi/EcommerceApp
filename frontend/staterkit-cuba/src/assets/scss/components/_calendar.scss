@@ -1,0 +1,33 @@
+/**=====================
+     66. Calendar CSS Start
+==========================**/
+.fc-button {
+    &.btn-light {
+        background-color: $primary-color !important;
+        border-color: $primary-color !important;
+        color: $white;
+        &:hover, &:focus, &:active, &.active {
+            background-color: darken($primary-color, 4%) !important;
+            border-color: darken($primary-color, 4%) !important;
+        }
+    }
+}
+.fc-button-group {
+    > .fc-button {
+        border-radius: 0.25rem 0 0 0.25rem;
+        &:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+        &:not(:last-child):not(.dropdown-toggle), > .fc-button-group:not(:last-child) > .fc-button {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:not(:first-child), > .fc-button-group:not(:first-child) > .fc-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+/**=====================
+    66. Calendar CSS End
+==========================**/

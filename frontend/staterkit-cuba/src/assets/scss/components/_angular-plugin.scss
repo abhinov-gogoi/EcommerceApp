@@ -1,0 +1,226 @@
+/**=====================
+      All angular plugin css start
+==========================**/
+// ck editor
+.ck {
+    &.ck-toolbar {
+        border: 1px solid $common-shadow-color !important;
+        background: #fefefe !important;
+        .ck {
+            &.ck-toolbar__separator {
+                background: $common-shadow-color !important;
+            }
+        }
+    }
+}
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+    border-color: $common-shadow-color !important;
+}
+.ck-editor__editable {
+    height: 245px;
+}
+// sweetalert2 page css
+.swal2-popup {
+    .swal2-styled {
+        font-size: 14px !important;
+        background-color: var(--theme-deafult) !important;
+    }
+    .swal2-title {
+        font-size: 26px !important;
+    }
+    .swal2-actions {
+        button {
+            + button {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+.swal2-close {
+    &:focus {
+        outline-color: $transparent-color;
+    }
+}
+.swal2-content {
+    #swal2-content {
+        .btn {
+            margin-bottom: 5px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.swal2-progress-steps {
+    margin-bottom: 15px;
+    .swal2-progress-step,
+    .swal2-progress-step-line {
+        background: $primary-color !important;
+    }
+    .swal2-progress-step {
+        &.swal2-active-progress-step {
+            background: $primary-color !important;
+            ~ .swal2-progress-step,
+            ~ .swal2-progress-step-line {
+                background: rgba($primary-color, 0.2) !important;
+            }
+        }
+    }
+}
+
+// owl carousel page
+.owl-theme {
+    .owl-nav {
+        &.disabled {
+            + .owl-dots {
+                margin-bottom: -10px !important;
+                margin-top: 25px !important;
+            }
+        }
+    }
+    .owl-dots {
+        .owl-dot {
+            span {
+                background: lighten($primary-color, 20%) !important;
+            }
+            &.active,
+            &:hover {
+                span {
+                    background: $primary-color !important;
+                }
+            }
+        }
+    }
+}
+.carousel-caption {
+    z-index: 1;
+}
+// range slider page css
+.ng5-slider {
+    .ng5-slider-pointer {
+        background-color: var(--theme-deafult) !important;
+        &:focus {
+            outline: $transparent-color;
+        }
+        &.ng5-slider-active {
+            &:after {
+                background-color: $theme-body-font-color !important;
+            }
+        }
+    }
+    .ng5-slider-selection {
+        background: var(--theme-deafult) !important;
+    }
+    .ng5-slider-tick {
+        &.ng5-slider-selected {
+            background: var(--theme-deafult) !important;
+        }
+    }
+}
+.custom-slider {
+    .ng5-slider {
+        .ng5-slider-bar,
+        .ng5-slider-tick {
+            background: #d8e0f3 !important;
+        }
+        .ng5-slider-selection,
+        .ng5-slider-tick.ng5-slider-selected {
+            background: var(--theme-deafult) !important;
+        }
+    }
+}
+// toastr page css
+.toast-success {
+    background-color: $success-color !important;
+}
+.toast-error {
+    background-color: $danger-color !important;
+}
+.toast-info {
+    background-color: var(--theme-deafult) !important;
+}
+.toast-warning {
+    background-color: $warning-color !important;
+}
+.ngx-toastr {
+    background-color: var(--theme-deafult) !important;
+    box-shadow: none !important;
+    &:hover {
+        box-shadow: none !important;
+    }
+    .toast-close-button {
+        top: -1px;
+    }
+}
+// modal
+.modal-header {
+    .close {
+        &:focus {
+            outline: unset;
+        }
+    }
+}
+// map
+agm-map {
+    height: 500px;
+}
+.leaflet-custom {
+    .map-height {
+        height: 500px;
+        z-index: 1;
+    }
+}
+
+// contact
+.contact-profile-form {
+    padding-bottom: 30px;
+    width: 460px;
+    margin: 0 auto;
+}
+.contact-search {
+    padding-top: 9px;
+    .form-group {
+        width: 100%;
+        &:before {
+            left: 67px;
+            top: 20px;
+        }
+        &:after {
+            left: 37px;
+            top: 24px;
+        }
+    }
+}
+.contact-filter {
+    display: flex;
+    align-items: center;
+    h5 {
+        width: 200px;
+    }
+}
+.contact-table {
+    table {
+        th,
+        td {
+            border-top: none;
+            padding: 30px;
+            vertical-align: middle;
+        }
+        tr {
+            td {
+                border-bottom: 1px solid $light-semi-gray;
+            }
+            &:last-child {
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+.change-img-button {
+    margin: 0 auto;
+}
+/**=====================
+      All angular plugin css end
+==========================**/

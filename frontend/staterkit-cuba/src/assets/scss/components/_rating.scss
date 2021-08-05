@@ -1,0 +1,52 @@
+/**=====================
+    71. Rating CSS start
+==========================**/
+ngb-rating {
+  &:focus {
+    outline-color: $transparent-color;
+  }
+}
+.rating-size {
+  span {
+    font-size: 25px;
+  }
+  &:focus {
+    outline-color: $transparent-color;
+  }
+}
+.star {
+  color: #b0c4de;
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+}
+.filled {
+  color: var(--theme-deafult);
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: $secondary-color;
+}
+.full {
+  color: $secondary-color;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: $secondary-color;
+}
+.editable-rating {
+  position: relative;
+  .btn-position {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+  }
+}
+
+/**=====================
+    71. Rating CSS end
+==========================**/

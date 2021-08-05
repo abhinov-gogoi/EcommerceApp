@@ -1,0 +1,73 @@
+<div class="cart-box" (click)="toggleCart()">
+  <app-feather-icons [icon]="'shopping-cart'"></app-feather-icons>
+  <span class="badge badge-pill badge-primary">2</span>
+</div>
+<ul class="cart-dropdown onhover-show-div" [class.active]="openCart">
+  <li>
+    <h6 class="mb-0 f-20">Shoping Cart</h6>
+    <app-feather-icons [icon]="'shopping-cart'"></app-feather-icons>
+  </li>
+  <li class="mt-0">
+    <div class="media">
+      <img class="img-fluid rounded-circle mr-3 img-60" src="assets/images/ecommerce/01.jpg" alt="">
+      <div class="media-body">
+        <span>V-Neck Shawl Collar Woman's Solid T-Shirt</span>
+        <p>Yellow(#fcb102)</p>
+        <div class="qty-box">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button>
+            </span>
+            <input class="form-control input-number" type="text" name="quantity" value="1">
+            <span class="input-group-prepend">
+              <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button>
+            </span>
+          </div>
+        </div>
+        <h6 class="text-right text-muted">$299.00</h6>
+      </div>
+      <div class="close-circle">
+        <a href="#">
+          <app-feather-icons [icon]="'x'"></app-feather-icons>
+        </a>
+      </div>
+    </div>
+  </li>
+  <li class="mt-0">
+    <div class="media">
+      <img class="img-fluid rounded-circle mr-3 img-60" src="assets/images/ecommerce/03.jpg" alt="">
+      <div class="media-body">
+        <span>V-Neck Shawl Collar Woman's Solid T-Shirt</span>
+        <p>Yellow(#fcb102)</p>
+        <div class="qty-box">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <button class="btn quantity-left-minus" type="button" data-type="minus"><i data-feather="minus"></i></button>
+            </span>
+            <input class="form-control input-number" type="text" name="quantity" value="1">
+            <span class="input-group-prepend">
+              <button class="btn quantity-right-plus" type="button" data-type="plus"><i data-feather="plus"></i></button>
+            </span>
+          </div>
+        </div>
+        <h6 class="text-right text-muted">$299.00</h6>
+      </div>
+      <div class="close-circle">
+        <a href="#">
+          <app-feather-icons [icon]="'x'"></app-feather-icons>
+        </a>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="total">
+      <h6 class="mb-2 mt-0 text-muted">Order Total : <span class="f-right f-20">$598.00</span></h6>
+    </div>
+  </li>
+  <li>
+    <a class="btn btn-block btn-primary view-cart" href="#">
+      Go to shoping bag
+    </a>
+    <a class="btn btn-block btn-secondary view-cart" href="#">Checkout</a>
+  </li>
+</ul>

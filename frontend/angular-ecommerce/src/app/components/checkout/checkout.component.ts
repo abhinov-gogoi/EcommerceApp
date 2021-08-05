@@ -257,3 +257,4 @@ export class CheckoutComponent implements OnInit {
   get creditCardNumber() {return this.checkoutFormGroup.get("creditCard.cardNumber")}
   get creditCardSecurityCode() {return this.checkoutFormGroup.get("creditCard.securityCode")}
 }
+
