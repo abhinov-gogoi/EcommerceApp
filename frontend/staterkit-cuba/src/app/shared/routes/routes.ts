@@ -29,5 +29,13 @@ export const content: Routes = [
   {
     path: 'search/:keyword',
     loadChildren: () => import('../../components/product/product.module').then(m => m.ProductModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('../../components/cart-page/cart-page.module').then(m => m.CartPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('../../components/checkout/checkout.module').then(m => m.CheckoutModule)
   }
 ];

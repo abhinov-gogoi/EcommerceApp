@@ -1,9 +1,11 @@
-<app-breadcrumb [title]="'Product'" [items]="['Apps', 'Ecommerce']" [active_item]="'Product'"></app-breadcrumb>
+<app-breadcrumb *ngIf="!searchMode" [title]="'Product'" [items]="['Apps', 'Ecommerce']" [active_item]="'Product'"></app-breadcrumb>
+<app-breadcrumb *ngIf="searchMode" [title]="'Search'"></app-breadcrumb>
+
 <!-- Container-fluid starts-->
 <div class="container-fluid product-wrapper" [class.sidebaron]="openSidebar">
   <div class="product-grid">
     <div class="feature-products">
-      <div class="row">
+      <div *ngIf="!searchMode" class="row">
         <div class="col-md-6 products-total">
           <div class="square-product-setting d-inline-block" (click)="toggleListView(false)">
             <a class="icon-grid grid-layout-view" href="javascript:void(0);">
@@ -143,6 +145,9 @@
         </div>
       </div> -->
     </div>
+    <ngb-alert *ngIf="products.length<=0" [type]="'warning'" [dismissible]="false">
+      No products found
+    </ngb-alert>
     <div class="product-wrapper-grid" [class.list-view]="listView">
       <div class="row">
         <div *ngFor="let product of products"  [class]="'col-xl-'+col+' col-sm-'+col" [class.col-xl-12]="listView">

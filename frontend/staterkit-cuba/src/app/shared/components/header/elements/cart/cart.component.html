@@ -41,10 +41,10 @@
     </div>
   </li>
   <li>
-    <a class="btn btn-block btn-primary view-cart" href="#">
-      Go to shoping bag
+    <a routerLink="/cart" class="btn btn-block btn-primary view-cart">
+      Go to Cart
     </a>
-    <a class="btn btn-block btn-secondary view-cart" href="#">Checkout</a>
+    <a routerLink="/checkout" *ngIf="totalPrice > 0" class="btn btn-block btn-secondary view-cart">Checkout</a>
   </li>
 
 </ul>
