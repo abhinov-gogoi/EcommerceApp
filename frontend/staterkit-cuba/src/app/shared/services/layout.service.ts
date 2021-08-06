@@ -7,18 +7,18 @@ export class LayoutService {
 
   public config = {
     settings: {
-      layout: 'Dubai',
-      layout_type: 'ltr',
-      layout_version: 'light-only',
-      sidebar_type: 'default-sidebar'
+       layout: 'Seoul',
+       layout_type: 'ltr',
+       layout_version: 'light-only',
+       sidebar_type: 'default-sidebar',
     },
     color: {
-      primary_color: '#7366ff', 
-      secondary_color: '#f73164'
+       primary_color: '#7366ff',
+       secondary_color: '#f73164'
     }
-  }
+ }
 
-  constructor() { 
+  constructor() {
     if(this.config.settings.layout_type == 'rtl')
       document.getElementsByTagName('html')[0].setAttribute('dir', this.config.settings.layout_type);
 

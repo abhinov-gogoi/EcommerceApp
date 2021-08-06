@@ -6,6 +6,7 @@
     </div>
     <div class="card-body checkout">
       <div class="row">
+
         <div class="col-lg-6 col-sm-12">
           <form>
             <div class="row">
@@ -59,6 +60,8 @@
             </div>
           </form>
         </div>
+
+        <!-- Review Cart -->
         <div class="col-lg-6 col-sm-12">
           <div class="checkout-details">
             <div class="order-box">
@@ -68,31 +71,23 @@
                 </div>
               </div>
               <ul class="qty">
-                <li>Pink Slim Shirt × 1 <span>$25.10</span></li>
-                <li>SLim Fit Jeans × 1 <span>$555.00</span></li>
+                <li *ngFor="let cartItem of cartItems">{{cartItem.name}} × {{cartItem.quantity}}<span>{{cartItem.quantity*cartItem.unitPrice | currency: 'INR'}}</span></li>
               </ul>
               <ul class="sub-total">
-                <li>Subtotal <span class="count">$380.10</span></li>
                 <li class="shipping-class">Shipping
                   <div class="shopping-checkout-option">
                     <label class="d-block" for="chk-ani">
-                      <input class="checkbox_animated" id="chk-ani" type="checkbox" checked="">Option 1
-                    </label>
-                    <label class="d-block" for="chk-ani1">
-                      <input class="checkbox_animated" id="chk-ani1" type="checkbox">Option 2
+                      <input class="checkbox_animated" id="chk-ani" type="checkbox" checked>Free
                     </label>
                   </div>
                 </li>
               </ul>
               <ul class="sub-total total">
-                <li>Total <span class="count">$620.00</span></li>
+                <li>Total <span class="count">{{totalPrice | currency: 'INR'}}</span></li>
               </ul>
               <div class="animate-chk">
                 <div class="row">
                   <div class="col">
-                    <label class="d-block" for="edo-ani">
-                      <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" checked="" data-original-title="" title="">Check Payments
-                    </label>
                     <label class="d-block" for="edo-ani1">
                       <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" data-original-title="" title="">Cash On Delivery
                     </label>

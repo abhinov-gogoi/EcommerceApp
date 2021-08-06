@@ -1,5 +1,16 @@
 1. disaplay - toast, warnings in Add to card, remove from cart, confirm
 2. checksum for credit card validation (Mastercard or VISA) based card number
+3. Invoice Page
+3. Automatic Download invoice as soon as order is placed, print OrderId in it
+- order history page
+- wishlist page
+4. Thank You page after successful order
+5. FAQs page
+6. Developer Page
+
+
+
+// For Old UI template 
 3. select dafault value of card in checkout.component.html
 4. Reload component after user login
 

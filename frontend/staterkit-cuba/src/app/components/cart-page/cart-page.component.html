@@ -7,7 +7,12 @@
           <h5>Cart</h5>
         </div>
         <div class="card-body">
-          <div class="row">
+          <ngb-alert *ngIf="cartItems.length <= 0" [type]="'light'" [dismissible]="false">
+              No products found
+          </ngb-alert>
+          <button routerLink="/product" *ngIf="cartItems.length <= 0" class="btn btn-block btn-primary cart-btn-transform">Continue Shopping</button>
+
+          <div *ngIf="cartItems.length > 0" class="row">
             <div class="order-history table-responsive wishlist">
               <table class="table table-bordered">
                 <thead>

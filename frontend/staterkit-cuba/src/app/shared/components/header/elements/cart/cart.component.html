@@ -8,7 +8,7 @@
     <app-feather-icons [icon]="'shopping-cart'"></app-feather-icons>
   </li>
 
-  <li *ngFor="let cartItem of cartItems" class="mt-0">
+  <li *ngFor="let cartItem of cartItems.slice(0, 4)" class="mt-0">
     <div class="media">
       <img class="img-fluid rounded-circle mr-3 img-60" src="{{cartItem.imageUrl}}" alt="">
       <div class="media-body">
@@ -35,16 +35,20 @@
     </div>
   </li>
 
+  <li *ngIf="cartItems.length <=0">
+    <h6 class="mb-0 f-20">Your cart is empty</h6>
+  </li>
+
   <li>
     <div class="total">
       <h6 class="mb-2 mt-0 text-muted">Order Total : <span class="f-right f-20">{{totalPrice | currency: 'INR'}}</span></h6>
     </div>
   </li>
-  <li>
+  <li *ngIf="cartItems.length > 0">
     <a routerLink="/cart" class="btn btn-block btn-primary view-cart">
       Go to Cart
     </a>
-    <a routerLink="/checkout" *ngIf="totalPrice > 0" class="btn btn-block btn-secondary view-cart">Checkout</a>
+    <a routerLink="/checkout" *ngIf="totalPrice > 0" class="btn btn-block btn-success view-cart">Checkout</a>
   </li>
 
 </ul>

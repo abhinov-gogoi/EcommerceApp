@@ -157,23 +157,28 @@
                 <a routerLink="/products/{{product.id}}">
                   <img class="img-fluid" src="{{product.imageUrl}}" alt="">
                 </a>
-                <!-- <div class="product-hover">
+                <div class="product-hover">
                   <ul>
                     <li>
-                      <button class="btn" type="button"><i class="icon-shopping-cart"></i></button>
+                      <button (click)="addToCart(product)" class="btn" type="button"><i class="icon-shopping-cart"></i></button>
                     </li>
-                    <li>
+                    <!-- <li>
                       <button class="btn" type="button" (click)="QuickView.openModal()"><i class="icon-eye"></i></button>
-                    </li>
+                    </li> -->
                     <li>
-                      <button class="btn" type="button"><i class="icofont icofont-law-alt-2"></i></button>
+                      <button class="btn" type="button" routerLink="/products/{{product.id}}"><i class="icon-eye"></i></button>
                     </li>
+                    <!-- <li>
+                      <button class="btn" type="button"><i class="icofont icofont-law-alt-2"></i></button>
+                    </li> -->
                   </ul>
-                </div> -->
+                </div>
               </div>
               <div class="product-details">
                 <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                <h4>{{product.name}}</h4>
+                <a routerLink="/products/{{product.id}}" style="color: rgba(49, 49, 49, 0.993);">
+                  <h4>{{product.name}}</h4>
+                </a>
                 <!-- <p>{{product.description}}</p> -->
                 <div class="product-price">{{product.unitPrice | currency: 'INR'}}
                   <del>{{product.unitPrice+130/product.unitPrice+55 | currency: 'INR'}} </del>
