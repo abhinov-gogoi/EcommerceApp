@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="card">
     <div class="card-header">
-      <h5>Billing Details</h5>
+      <h5>Shipping Details</h5>
     </div>
     <div class="card-body checkout">
       <div class="row">
@@ -12,25 +12,26 @@
             <div class="row">
               <div class="form-group col-sm-6">
                 <label for="inputEmail4">First Name</label>
-                <input class="form-control" id="inputEmail4" type="email">
+                <input class="form-control" id="inputEmail4" type="text">
               </div>
               <div class="form-group col-sm-6">
                 <label for="inputPassword4">Last Name</label>
-                <input class="form-control" id="inputPassword4" type="password">
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="inputEmail5">Phone</label>
-                <input class="form-control" id="inputEmail5" type="email">
-              </div>
-              <div class="form-group col-sm-6">
-                <label for="inputPassword7">Email Address</label>
-                <input class="form-control" id="inputPassword7" type="password">
+                <input class="form-control" id="inputPassword4" type="text">
               </div>
             </div>
             <div class="form-group">
+              <label for="inputPassword7">Email Address</label>
+              <input class="form-control" id="inputPassword7" type="email">
+            </div>
+            <div class="form-group">
               <label for="inputState">Country</label>
+              <select class="form-control" id="inputState">
+                <option selected="">Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputState">State</label>
               <select class="form-control" id="inputState">
                 <option selected="">Choose...</option>
                 <option>...</option>
@@ -41,21 +42,13 @@
               <input class="form-control" id="inputAddress5" type="text">
             </div>
             <div class="form-group">
-              <label for="inputCity">Town/City</label>
-              <input class="form-control" id="inputCity" type="text">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">State/Country</label>
-              <input class="form-control" id="inputAddress2" type="text">
-            </div>
-            <div class="form-group">
               <label for="inputAddress6">Postal Code</label>
               <input class="form-control" id="inputAddress6" type="text">
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" id="gridCheck" type="checkbox">
-                <label class="form-check-label" for="gridCheck">Check me out</label>
+                <input class="form-check-input" id="gridCheck" type="checkbox" checked>
+                <label class="form-check-label" for="gridCheck">Billing Address same as Shipping Address</label>
               </div>
             </div>
           </form>
@@ -99,6 +92,63 @@
               </div>
               <div class="text-right"><a class="btn btn-primary" href="javascript:void(0);">Place Order  </a></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid credit-card">
+  <div class="row">
+    <div class="col-xl-12 box-col-12">
+      <div class="card">
+        <div class="card-header py-4">
+          <h5>Credit card </h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-7">
+              <form class="theme-form mega-form">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Card number">
+                </div>
+                <div class="col-12">
+                  <label class="col-form-label p-b-20">Expiration Date</label>
+                </div>
+                <div class="form-group mb-0">
+                  <select class="form-control" size="1">
+                    <option>Select Month</option>
+                    <option>Jan</option>
+                    <option>Fab</option>
+                    <option>March</option>
+                    <option>April</option>
+                  </select>
+                </div>
+                <div class="form-group mb-0">
+                  <select class="form-control" size="1">
+                    <option>Select Year</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                   </select>
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Name on card">
+                </div>
+                <div class="form-group mb-0">
+                  <select class="form-control" size="1">
+                    <option>Select Type</option>
+                    <option>Master</option>
+                    <option>Visa</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-5 text-center"><img class="img-fluid" src="assets/images/checkout/card.png" alt=""></div>
           </div>
         </div>
       </div>
