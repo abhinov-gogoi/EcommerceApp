@@ -1,0 +1,1 @@
+(self.webpackChunkcuba=self.webpackChunkcuba||[]).push([[592],{4594:(i,s,t)=>{"use strict";t.d(s,{b:()=>e});class e{constructor(i){this.id=i.id,this.name=i.name,this.imageUrl=i.imageUrl,this.unitPrice=i.unitPrice,this.quantity=1}}}}]);
