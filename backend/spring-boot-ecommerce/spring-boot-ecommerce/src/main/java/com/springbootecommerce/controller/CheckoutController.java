@@ -18,7 +18,7 @@ public class CheckoutController {
 
     @GetMapping("")
     public String working() {
-        return "Its Working heyy!!!" ;
+        return "Hello from Abhinov, order purchase get request works !!!" ;
     }
 
     @PostMapping("/purchase")

@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: "Your Sender Id"
   },
   // ecommerceApiUrl: 'http://localhost:8080/api'
-  ecommerceApiUrl: 'http://ec2-13-235-27-74.ap-south-1.compute.amazonaws.com:8080/api'
+  ecommerceApiUrl: 'http://ec2-13-235-27-74.ap-south-1.compute.amazonaws.com:9000/api'
 };
